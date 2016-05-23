@@ -11,6 +11,7 @@
 	</div>
 	<!-- //banner1 -->
 	<!-- services -->
+	<c:set var="count" value="0" scope="page" />
 	<div class="services">
 		<div class="container">
 			<h1 class="animated fadeInLeftBig" data-wow-duration="1000ms"
@@ -20,8 +21,7 @@
 					<div class="col-md-4 service-grid">
 						<div class="service-grd wow fadeInLeftBig"
 							data-wow-duration="1000ms" data-wow-delay="300ms">
-							<img src=${product.img_product} alt=" "
-								class="img-responsive" />
+							<img src=${product.img_product } alt=" " class="img-responsive" />
 							<div class="service-grd-pos">
 								<h4>${product.name_product}</h4>
 								<div class="more m2">
@@ -29,14 +29,16 @@
 								</div>
 							</div>
 							<div class="service-grd-pos2">
-								<p>${product.price} &#8364;</p>
+								<p>${product.price}&#8364;</p>
 							</div>
 						</div>
 					</div>
+					<c:set var="count" value="${count + 1}" scope="page" />
 				</c:forEach>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- //services -->
 </body>

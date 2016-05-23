@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						class="icon-bar"></span>
 				</button>
 				<div class="logo">
-					<a class="navbar-brand" href="index">Délice</a>
+					<a class="navbar-brand" href="acceuil">Délice</a>
 				</div>
 			</div>
 
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				id="bs-example-navbar-collapse-1">
 				<nav class="cl-effect-13" id="cl-effect-13">
 					<ul class="nav navbar-nav">
-						<li><a href="index" class="active">Acceuil</a></li>
+						<li><a href="acceuil" class="active">Acceuil</a></li>
 						<li role="presentation" class="dropdown"><a
 							class="dropdown-toggle" data-toggle="dropdown" href="#"
 							role="button" aria-haspopup="true" aria-expanded="false">
@@ -77,8 +77,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a <% request.setAttribute("name", "coktails-et-buffets"); %> href="${name}">Cocktails et buffets</a></li>
 								<li><a <% request.setAttribute("name", "bouchees"); %> href="${name}">Bouchées</a></li>
 							</ul></li>
-						<li><a href="galery">Galerie photos</a></li>
-						<li><a href="weare">Qui somme nous?</a></li>
+						<li><a href="galerie-photo">Galerie photos</a></li>
+						<li><a href="nous-somme">Qui somme nous?</a></li>
 						
 							<li><a href="#" data-toggle="modal" data-target="#myModal4"><span>Se connecter</span></a></li>
 	

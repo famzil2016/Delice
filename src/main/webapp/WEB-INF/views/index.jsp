@@ -14,29 +14,26 @@
 					<ul id="flexiselDemo1">
 						<li>
 							<div class="banner-info1-grid">
-								<img src="resources/images/1.png" alt=" "
+								<img src=${product1.img_product } alt=" "
 									class="img-responsive" />
-								<h3>denouncing pleasure</h3>
-								<p>Duis aute irure dolor in reprehenderit in voluptate velit
-									esse cillum dolore eu fugiat nulla pariatur.</p>
+								<h3>${product1.name_product}</h3>
+								<p>${product1.description_short_product}</p>
 							</div>
 						</li>
 						<li>
 							<div class="banner-info1-grid">
-								<img src="resources/images/2.png" alt=" "
+								<img src=${product2.img_product } alt=" "
 									class="img-responsive" />
-								<h3>denouncing pleasure</h3>
-								<p>Duis aute irure dolor in reprehenderit in voluptate velit
-									esse cillum dolore eu fugiat nulla pariatur.</p>
+								<h3>${product2.name_product}</h3>
+								<p>${product2.description_short_product}</p>
 							</div>
 						</li>
 						<li>
 							<div class="banner-info1-grid">
-								<img src="resources/images/3.png" alt=" "
+								<img src=${product3.img_product } alt=" "
 									class="img-responsive" />
-								<h3>denouncing pleasure</h3>
-								<p>Duis aute irure dolor in reprehenderit in voluptate velit
-									esse cillum dolore eu fugiat nulla pariatur.</p>
+								<h3>${product3.name_product}</h3>
+								<p>${product3.description_short_product}</p>
 							</div>
 						</li>
 					</ul>

@@ -42,9 +42,9 @@
 					<li><a href="index">Acceuil</a></li>
 					<li><a href="#">Catalogue</a></li>
 					<li><a href="#">Nos cartes</a></li>
-					<li><a href="galery">Galerie photos</a></li>
+					<li><a href="galerie-photo">Galerie photos</a></li>
 					<li><a href="mail">Contactez-nous</a></li>
-					<li><a href="weare">Qui somme nous</a></li>
+					<li><a href="nous-somme">Qui somme nous</a></li>
 					<li><a href="#">Commandes expédiables</a></li>
 				</ul>
 			</div>

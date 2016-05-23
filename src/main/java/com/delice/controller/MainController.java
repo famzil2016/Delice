@@ -1,10 +1,14 @@
 package com.delice.controller;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tools.ant.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -80,8 +84,7 @@ public class MainController {
 		// returning the relative view home !
 		mav.setViewName("profil");
 		return mav;
-	} 
-
+	}
 
 	@RequestMapping(value = "/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView listOfProducts(@PathVariable("name") String name) {
@@ -95,24 +98,41 @@ public class MainController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET) 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(ModelMap pmap) {
 		return new ModelAndView("index");
 	}
 
-	@RequestMapping(value = "/weare", method = RequestMethod.GET)
+	@RequestMapping(value = "/nous-somme", method = RequestMethod.GET)
 	public String weare(ModelMap pmap) {
 		return "weare";
 	}
 
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String home(ModelMap pmap) {
-		return "index";
+	@RequestMapping(value = "/acceuil", method = RequestMethod.GET)
+	public ModelAndView home(ModelMap pmap) {
+		// get 8 categories if there is:
+		List<Product> products = productServiceImpl.getAllProducts();
+
+		ModelAndView mav = new ModelAndView();
+		// all projects
+		mav.addObject("product1", products.get(new Random().nextInt(products.size())));
+		mav.addObject("product2", products.get(new Random().nextInt(products.size())));
+		mav.addObject("product3", products.get(new Random().nextInt(products.size())));
+
+		mav.setViewName("index");
+		return mav;
 	}
 
-	@RequestMapping(value = "/galery", method = RequestMethod.GET)
-	public String galery(ModelMap pmap) {
-		return "galery";
+	@RequestMapping(value = "/galerie-photo", method = RequestMethod.GET)
+	public ModelAndView galery(ModelMap pmap) {
+		ModelAndView galery = new ModelAndView("galery");
+
+		List<Product> products = productServiceImpl.getAllProducts();
+		if (products.size() == 0)
+			return new ModelAndView("403");
+
+		galery.addObject("products", products);
+		return galery;
 	}
 
 	@RequestMapping(value = "/mail", method = RequestMethod.GET)

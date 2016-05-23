@@ -27,7 +27,7 @@ public class Product implements Serializable {
 
     private String description_long_product;
 
-    private float description_short_product;
+    private String description_short_product;
 
     private String details_product;
 
@@ -82,11 +82,11 @@ public class Product implements Serializable {
         this.description_long_product = description_long_product;
     }
 
-    public float getDescription_short_product() {
+    public String getDescription_short_product() {
         return this.description_short_product;
     }
 
-    public void setDescription_short_product(float description_short_product) {
+    public void setDescription_short_product(String description_short_product) {
         this.description_short_product = description_short_product;
     }
 
