@@ -86,31 +86,31 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/{name:.+}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
 	public ModelAndView listOfProducts(@PathVariable("name") String name) {
 		ModelAndView modelAndView = new ModelAndView("services");
 
 		List<Product> products = productServiceImpl.getAllProductsByCategory(name);
 		if (products.size() == 0)
 			return new ModelAndView("403");
-
+		
 		modelAndView.addObject("products", products);
+		String cat= name ;
+		modelAndView.addObject("cat", cat );
 		return modelAndView;
 	}
+	
 
+	@RequestMapping(value = "/{cat}/{product}/single", method = RequestMethod.GET)
+	public ModelAndView single(@PathVariable("product") String product) {
+		ModelAndView modelAndView = new ModelAndView("single");
+		Long id=Long.parseLong(product, 10);
+		Product item=productServiceImpl.getProductById(id);
+		modelAndView.addObject("item", item);
+		return modelAndView;
+	}
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(ModelMap pmap) {
-		return new ModelAndView("index");
-	}
-
-	@RequestMapping(value = "/nous-somme", method = RequestMethod.GET)
-	public String weare(ModelMap pmap) {
-		return "weare";
-	}
-
-	@RequestMapping(value = "/acceuil", method = RequestMethod.GET)
-	public ModelAndView home(ModelMap pmap) {
-		// get 8 categories if there is:
 		List<Product> products = productServiceImpl.getAllProducts();
 
 		ModelAndView mav = new ModelAndView();
@@ -121,6 +121,18 @@ public class MainController {
 
 		mav.setViewName("index");
 		return mav;
+	}
+	
+
+
+	@RequestMapping(value = "/nous-somme", method = RequestMethod.GET)
+	public String weare(ModelMap pmap) {
+		return "weare";
+	}
+
+	@RequestMapping(value = "acceuil", method = RequestMethod.GET)
+	public ModelAndView home(ModelMap pmap) {
+		return new ModelAndView("redirect:/");
 	}
 
 	@RequestMapping(value = "/galerie-photo", method = RequestMethod.GET)
@@ -140,15 +152,26 @@ public class MainController {
 		return "mail";
 	}
 
-	/*
-	 * @RequestMapping(value = "/profil", method = RequestMethod.GET) public
-	 * ModelAndView profil(ModelMap pmap) { return new
-	 * ModelAndView("redirect:/"); }
-	 */
 
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public String checkout(ModelMap pmap) {
 		return "checkout";
 	}
-
+	
+	@RequestMapping(value = "/{val1}/{val2}/acceuil", method = RequestMethod.GET)
+	public ModelAndView goHome(ModelMap pmap) {
+		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value = "/{val1}/{val2}/nous-somme", method = RequestMethod.GET)
+	public ModelAndView goWeare(ModelMap pmap) {
+		return new ModelAndView("redirect:/nous-somme");
+	}
+	
+	@RequestMapping(value = "/{val1}/{val2}/galerie-photo", method = RequestMethod.GET)
+	public ModelAndView goGallery(ModelMap pmap) {
+		return new ModelAndView("redirect:/galerie-photo");
+	}
+	
+	
 }

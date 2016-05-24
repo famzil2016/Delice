@@ -44,5 +44,19 @@ public class ProductDaoImpl implements ProductDao{
 		return products;	
 	}
 
+	@Override
+	public Product getProductById(Long id) {
+		
+		Session s = sessionFactory.openSession();
+		Transaction tx = s.beginTransaction();
+		Query q = s.createQuery("from Product where id_product=:id");
+		q.setLong("id", id);
+		List<Product> prods = q.list();
+		if (prods.size() == 0)
+			return null;
+		return prods.get(0);	}
+	
+	
+
 
 }

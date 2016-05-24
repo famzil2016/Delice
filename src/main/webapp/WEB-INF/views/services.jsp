@@ -25,7 +25,8 @@
 							<div class="service-grd-pos">
 								<h4>${product.name_product}</h4>
 								<div class="more m2">
-									<a href="single.jsp" class="hvr-curl-bottom-right">voir</a>
+									<c:set var="prod" value="${cat}/${product.id_product}/single"/>
+									<a href=${prod } class="hvr-curl-bottom-right">voir</a>
 								</div>
 							</div>
 							<div class="service-grd-pos2">
@@ -44,4 +45,3 @@
 </body>
 <%@ include file="footer.jsp"%>
 <%@ include file="login.jsp"%>
-
