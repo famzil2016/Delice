@@ -15,17 +15,18 @@
 	<div class="services">
 		<div class="container">
 			<h1 class="animated fadeInLeftBig" data-wow-duration="1000ms"
-				data-wow-delay="300ms">Main Services</h1>
+				data-wow-delay="300ms">${cat}</h1>
 			<div class="service-grids">
-				<c:forEach var="product" items="${products}">
+				<c:forEach var="product" items="${products}" varStatus="loop">
 					<div class="col-md-4 service-grid">
 						<div class="service-grd wow fadeInLeftBig"
 							data-wow-duration="1000ms" data-wow-delay="300ms">
-							<img src=${product.img_product } alt=" " class="img-responsive" />
+							<img src="<c:url value="${product.img_product}.png" />" alt=" "
+								class="img-responsive" />
 							<div class="service-grd-pos">
 								<h4>${product.name_product}</h4>
 								<div class="more m2">
-									<c:set var="prod" value="${cat}/${product.id_product}/single"/>
+									<c:set var="prod" value="${cat}/${product.id_product}/produit" />
 									<a href=${prod } class="hvr-curl-bottom-right">voir</a>
 								</div>
 							</div>
@@ -34,7 +35,6 @@
 							</div>
 						</div>
 					</div>
-					<c:set var="count" value="${count + 1}" scope="page" />
 				</c:forEach>
 			</div>
 		</div>
@@ -45,3 +45,4 @@
 </body>
 <%@ include file="footer.jsp"%>
 <%@ include file="login.jsp"%>
+

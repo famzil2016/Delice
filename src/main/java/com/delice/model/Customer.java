@@ -1,6 +1,7 @@
 package com.delice.model;
 
 import java.io.Serializable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Table;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 @Entity
+@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
 public class Customer implements Serializable {
 
     /**
@@ -51,10 +54,22 @@ public class Customer implements Serializable {
 	@Column(name = "company_customer")
     @Basic
     private String company_customer;
+	
 
+    @Basic
+	private String salt_customer;
+    
     public Customer() {
 
     }
+    
+	public String getSalt_customer() {
+		return this.salt_customer;
+	}
+
+	public void setSalt_customer(String salt_customer) {
+		this.salt_customer = salt_customer;
+	}
 
     public boolean isNewsletter() {
         return this.newsletter;

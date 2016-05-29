@@ -6,7 +6,7 @@
 				data-wow-duration="1000ms" data-wow-delay="300ms">
 				<h3>Qui somme nous?</h3>
 				<div class="footer-grd-left">
-					<img src="resources/images/6.jpg" class="img-responsive" alt=" " />
+					<img src="<c:url value="/resources/images/6.jpg" />" class="img-responsive" alt=" " />
 				</div>
 				<div class="footer-grd-left">
 					<p style="text-align: justify;">Délice est votre boutique
@@ -28,14 +28,14 @@
 						href="${name}">Pâtisseries</a></li>
 					<li><a <% request.setAttribute("name", "gouters"); %>
 						href="${name}">Goûters</a></li>
-					<li><a <% request.setAttribute("name", "macorons"); %>
+					<li><a <% request.setAttribute("name", "macarons"); %>
 						href="${name}">Macarons</a></li>
 					<li><a
 						<% request.setAttribute("name", "bonbons-de-chocolat"); %>
 						href="${name}">Bonbons de chocolat</a></li>
 					<li><a <% request.setAttribute("name", "piece-montees"); %>
 						href="${name}">Pièces montées</a></li>
-					<li><a <% request.setAttribute("name", "tablette"); %>
+					<li><a <% request.setAttribute("name", "tablettes"); %>
 						href="${name}">Tablettes</a></li>
 					<li><a
 						<% request.setAttribute("name", "coktails-et-buffets"); %>
@@ -50,12 +50,12 @@
 				<br />
 				<ul>
 					<li><a href="acceuil">Acceuil</a></li>
-					<li><a href="#">Catalogue</a></li>
+					<li><a href="catalogue">Catalogue</a></li>
 					<li><a href="#">Nos cartes</a></li>
 					<li><a href="galerie-photo">Galerie photos</a></li>
 					<li><a href="mail">Contactez-nous</a></li>
 					<li><a href="nous-somme">Qui somme nous</a></li>
-					<li><a href="#">Commandes expédiables</a></li>
+					<li><a <% request.setAttribute("name", "les-gourmandises-expediables"); %> href="${name}">Commandes expédiables</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 footer-grid wow fadeInUp"
@@ -63,28 +63,28 @@
 				<h3>Suivez-nous</h3>
 				</br>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/7.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/7.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/8.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/8.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/7.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/7.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/8.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/8.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/7.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/7.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="footer-grd">
-					<a href="#"><img src="resources/images/8.jpg"
+					<a href="#"><img src="<c:url value="/resources/images/8.jpg" />"
 						class="img-responsive" alt=" " /></a>
 				</div>
 				<div class="clearfix"></div>

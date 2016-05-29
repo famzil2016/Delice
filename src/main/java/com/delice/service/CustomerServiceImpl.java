@@ -21,12 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
          this.customerDAO = customerDAO;
   }
  
-	@Override
-	public boolean checkLogin(String customerName, String customerPassword) {
 	
-		System.out.println("In Service class...Check Login");
-        return customerDAO.checkLogin(customerName, customerPassword);
-	}
 
 	@Override
 	public List<Customer> getAllCustomers() {
@@ -37,6 +32,13 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void create(Customer entity) {
 		customerDAO.create(entity);
+	}
+
+
+
+	@Override
+	public Customer getCustomerByEmail(String email) {
+		return customerDAO.getCustomerByEmail(email);
 	}
 	
 	

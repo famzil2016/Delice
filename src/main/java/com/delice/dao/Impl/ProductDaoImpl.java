@@ -55,6 +55,30 @@ public class ProductDaoImpl implements ProductDao{
 		if (prods.size() == 0)
 			return null;
 		return prods.get(0);	}
+
+	@Override
+	public List<Product> getShippableProducts(short id) {
+		Session s = sessionFactory.openSession();
+		Transaction tx = s.beginTransaction();
+		Query q = (Query) s.createQuery("from Product where shippable_product=:id");
+		q.setShort("id",id);
+		List<Product> products = q.list();
+		if (products.size() == 0)
+			return null;
+		return products;
+	}
+
+	@Override
+	public List<Product> getNewestProducts(int limit) {
+		Session s = sessionFactory.openSession();
+		Transaction tx = s.beginTransaction();
+		Query q = (Query) s.createQuery("from Product ORDER BY add_date_product DESC");
+		q.setMaxResults(4);
+		List<Product> products = q.list();
+		if (products.size() == 0)
+			return null;
+		return products;
+	}
 	
 	
 

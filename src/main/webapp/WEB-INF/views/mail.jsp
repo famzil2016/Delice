@@ -22,8 +22,8 @@
 				data-wow-duration="1000ms" data-wow-delay="300ms">
 				<h4>Adresse</h4>
 				<h2 style="text-align: justify;">
-					Boutique DÃ©lice, ouvert du Lundi au vendredi de 8h00 Ã  19h00 et
-					le samedi et dimanche de 9h00 Ã  13h30. <span>27 Quai Roi de
+					Boutique Délice, ouvert du Lundi au vendredi de 8h00 à 19h00 et
+					le samedi et dimanche de 9h00 à 13h30. <span>27 Quai Roi de
 						Pologne Angers</span>
 				</h2>
 				<ul>

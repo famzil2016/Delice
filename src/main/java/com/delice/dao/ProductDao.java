@@ -14,4 +14,6 @@ public interface ProductDao {
     public List<Product> getAllProducts();
     public List<Product> getAllProductsByCategory(String name);
     public Product getProductById(Long id);
+    public List<Product> getShippableProducts(short id);
+    public List<Product> getNewestProducts(int limit);
 }

@@ -31,4 +31,14 @@ public class ProductServiceImpl implements ProductService{
 		return productDao.getProductById(id);
 	}
 
+	@Override
+	public List<Product> getShippableProducts(short id) {
+	    return productDao.getShippableProducts(id);
+	}
+
+	@Override
+	public List<Product> getNewestProducts(int limit) {
+		return productDao.getNewestProducts(limit);
+	}
+
 }

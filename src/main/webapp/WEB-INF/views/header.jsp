@@ -63,26 +63,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<nav class="cl-effect-13" id="cl-effect-13">
 					<ul class="nav navbar-nav">
 						<li><a href="acceuil" class="active">Acceuil</a></li>
-						<li role="presentation" class="dropdown"><a
-							class="dropdown-toggle" data-toggle="dropdown" href="#"
+						<li role="presentation" class="dropdown"><a 
+							class="dropdown-toggle" data-toggle="dropdown" 
 							role="button" aria-haspopup="true" aria-expanded="false">
 								Catalogue <span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
 								<li><a <% request.setAttribute("name", "patisseries"); %> href="${name}">Pâtisseries</a></li>
 								<li><a <% request.setAttribute("name", "gouters"); %> href="${name}">Goûters</a></li>
-								<li><a <% request.setAttribute("name", "macorons"); %> href="${name}">Macarons</a></li>
+								<li><a <% request.setAttribute("name", "macarons"); %> href="${name}">Macarons</a></li>
 								<li><a <% request.setAttribute("name", "bonbons-de-chocolat"); %> href="${name}">Bonbons de chocolat</a></li>
 								<li><a <% request.setAttribute("name", "piece-montees"); %> href="${name}">Pièces montées</a></li>
-								<li><a <% request.setAttribute("name", "tablette"); %> href="${name}">Tablettes</a></li>
+								<li><a <% request.setAttribute("name", "tablettes"); %> href="${name}">Tablettes</a></li>
 								<li><a <% request.setAttribute("name", "coktails-et-buffets"); %> href="${name}">Cocktails et buffets</a></li>
 								<li><a <% request.setAttribute("name", "bouchees"); %> href="${name}">Bouchées</a></li>
 							</ul></li>
 						<li><a href="galerie-photo">Galerie photos</a></li>
 						<li><a href="nous-somme">Qui somme nous?</a></li>
-						
+						<c:choose>
+						<c:when test="${not empty customer}">
+							<li><a href="logout">Se déconnecter</a></li>
+						</c:when>
+						<c:otherwise>
 							<li><a href="#" data-toggle="modal" data-target="#myModal4"><span>Se connecter</span></a></li>
-	
+						</c:otherwise>
+						</c:choose>
 					</ul>
 				</nav>
 				<div class="social-icons">
