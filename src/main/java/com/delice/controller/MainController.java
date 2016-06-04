@@ -132,6 +132,7 @@ public class MainController {
 		modelAndView.addObject("products", products);
 		String cat = categoryServiceImpl.getCategoryName(name);
 		modelAndView.addObject("cat", cat);
+		modelAndView.addObject("catlink", name);
 		return modelAndView;
 	}
 	

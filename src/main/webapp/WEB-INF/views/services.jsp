@@ -27,7 +27,7 @@
 								<h4>${product.name_product}</h4>
 								<div class="more m2">
 									<c:set var="prod" value="${cat}/${product.id_product}/produit" />
-									<a href=${prod } class="hvr-curl-bottom-right">voir</a>
+									<a href="${catlink}/${product.id_product}/produit" class="hvr-curl-bottom-right">voir</a>
 								</div>
 							</div>
 							<div class="service-grd-pos2">
